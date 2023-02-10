@@ -57,7 +57,16 @@ string[] ReducedArray(string[] arr, int countLines, int maxSize)
         return newArr;
 }
 
-
+//Метод выводит на экран массив
+void Print1DArray(string[] arr)
+{
+    Console.Write("[");
+    for(int i = 0; i<arr.Length-1; i++)
+    {
+        Console.Write(arr[i] + ",");
+    }
+    Console.WriteLine(arr[arr.Length-1] + "]");
+}
 
 string[] words = StringArray(ReadDataString("Введите через запятую слюбые строки: "));
 Console.WriteLine();
@@ -65,6 +74,7 @@ int maxSize = ReadData("Введите максимальное число си�
 int countLines = CountLines(words, maxSize);
 string[] newArr = ReducedArray(words, countLines, maxSize);
 Console.WriteLine();
+Print1DArray(newArr);
 
 
 
