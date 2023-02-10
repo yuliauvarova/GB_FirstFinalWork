@@ -28,14 +28,14 @@ int ReadData(string msg)
 }
 
 //Метод считает число строк нужной длины
-int CountLines(string[] arr,int maxSize)
+int CountLines(string[] arr, int maxSize)
 {
-    int countLines =0;
-    for(int i=0;i<arr.Length; i++)
+    int countLines = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
-        if(arr[i].Length<=maxSize)
+        if (arr[i].Length <= maxSize)
         {
-            countLines=countLines+1;
+            countLines = countLines + 1;
         }
     }
     return countLines;
@@ -45,27 +45,27 @@ int CountLines(string[] arr,int maxSize)
 string[] ReducedArray(string[] arr, int countLines, int maxSize)
 {
     string[] newArr = new string[countLines];
-    int position=0;
-        for(int j=0; j<arr.Length; j++)
+    int position = 0;
+    for (int j = 0; j < arr.Length; j++)
+    {
+        if (arr[j].Length <= maxSize)
         {
-            if(arr[j].Length<=maxSize)
-            {
-                newArr[position] = arr[j];
-                position = position+1;
-            }
+            newArr[position] = arr[j];
+            position = position + 1;
         }
-        return newArr;
+    }
+    return newArr;
 }
 
 //Метод выводит на экран массив
 void Print1DArray(string[] arr)
 {
     Console.Write("[");
-    for(int i = 0; i<arr.Length-1; i++)
+    for (int i = 0; i < arr.Length - 1; i++)
     {
         Console.Write(arr[i] + ",");
     }
-    Console.WriteLine(arr[arr.Length-1] + "]");
+    Console.WriteLine(arr[arr.Length - 1] + "]");
 }
 
 string[] words = StringArray(ReadDataString("Введите через запятую слюбые строки: "));
